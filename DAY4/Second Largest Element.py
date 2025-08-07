@@ -1,9 +1,9 @@
 arr = list(map(int, input("Enter numbers separated by space: ").split()))
-max_element = max(arr)
-while max_element in arr:
-    arr.remove(max_element)
-if len(arr) > 0:
-    second_largest = max(arr)
-    print("Second Largest:", second_largest)
-else:
-    print("No second largest element found")
+first = second = float('-inf')
+for num in arr:
+    if num > first:
+        second = first
+        first = num
+    elif num > second and num != first:
+        second = num
+print("Second Largest:", second)
